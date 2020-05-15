@@ -17,7 +17,7 @@ It solves one specific problem for me. However, please do make suggestions on ho
 
 Just `mv email-on-changed-file.vars.example email-on-changed-file.vars` and set the varibles.
 
-Set the script as a cronjob.
+Set the script as a cronjob. Give it the variable file as an argument: `./email-on-changed-file.sh email-on-changed-file.vars`
 
 It will compare the md5sum of the downloaded file with that of the previous run.
 
