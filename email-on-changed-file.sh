@@ -9,7 +9,7 @@ fi
 BASENAME="${FILENAME%.*}"
 cd $DATADIR
 wget -O $BASENAME/$FILENAME $URL 
-if [ "$(md5sum $1/$FILENAME)" == "$(cat $MD5SUM)" ]
+if [ "$(md5sum $BASENAME/$FILENAME)" == "$(cat $MD5SUM)" ]
 then
 echo no change
 exit
