@@ -1,8 +1,15 @@
 #!/bin/bash
+if [ -n "$1" ]
+then
 source $1
+else
+echo "please specify the parameter file like this: ./email-on-changed-file.sh email-on-changed-file.vars"
+exit 1
+fi
+BASENAME=$(basename $1)
 cd $DATADIR
-wget -O afu-pruefungen-files/Termine_Afu_Pruefungen.pdf $URL 
-if [ "$(md5sum afu-pruefungen-files/Termine_Afu_Pruefungen.pdf)" == "$(cat $MD5SUM)" ]
+wget -O $BASENAME/$FILENAME $URL 
+if [ "$(md5sum $1/$FILENAME)" == "$(cat $MD5SUM)" ]
 then
 echo no change
 exit
