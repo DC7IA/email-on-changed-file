@@ -8,7 +8,7 @@ exit 1
 fi
 BASENAME="${FILENAME%.*}"
 cd $DATADIR
-wget -O $BASENAME/$FILENAME $URL 
+curl -sS $URL -o $BASENAME/$FILENAME
 if [ "$(md5sum $BASENAME/$FILENAME)" == "$(cat $MD5SUM)" ]
 then
 echo no change
