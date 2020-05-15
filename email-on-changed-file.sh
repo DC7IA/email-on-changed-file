@@ -1,5 +1,5 @@
 #!/bin/bash
-source afu-pruefungen.vars
+source $1
 cd $DATADIR
 wget -O afu-pruefungen-files/Termine_Afu_Pruefungen.pdf $URL 
 if [ "$(md5sum afu-pruefungen-files/Termine_Afu_Pruefungen.pdf)" == "$(cat $MD5SUM)" ]

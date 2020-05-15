@@ -1,0 +1,15 @@
+# directory for storing our stuff
+DATADIR="/home/$USER/cronjobs/"
+# URL of the file to check
+URL="https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommunikation/Unternehmen_Institutionen/Frequenzen/Amateurfunk/Pruefungstermine/Termine_Afu_Pruefungen.pdf?__blob=publicationFile" 
+# location of the md5sum (so we can compare on the next run)
+MD5SUM="afu-pruefungen-files/md5sum-previous-file"
+# email address used for the sender
+SENDER="noreply@example.org"
+# email address to send to
+RECEIVER="informedperson@example.org"
+# email subject line
+SUBJECT="Update: Termine Amateurfunkprüfungen"
+# email content
+CONTENT="Die Bundesnetzagentur hat das PDF mit den Terminen der Amateurfunkprüfungen aktualisiert.\n
+Hier findest du das aktuelle PDF: https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommunikation/Unternehmen_Institutionen/Frequenzen/Amateurfunk/Pruefungstermine/Termine_Afu_Pruefungen.pdf \n\nDu kannst auf diese Email nicht antworten, da diese automatisch verschickt wurde."
