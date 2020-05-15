@@ -6,7 +6,7 @@ else
 echo "please specify the parameter file like this: ./email-on-changed-file.sh email-on-changed-file.vars"
 exit 1
 fi
-BASENAME=$(basename $1)
+BASENAME="${FILENAME%.*}"
 cd $DATADIR
 wget -O $BASENAME/$FILENAME $URL 
 if [ "$(md5sum $1/$FILENAME)" == "$(cat $MD5SUM)" ]
