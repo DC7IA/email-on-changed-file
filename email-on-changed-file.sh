@@ -8,8 +8,8 @@ exit 1
 fi
 BASENAME="${1%.*}"
 cd $DATADIR
-curl -sS $URL -o $1/$FILENAME
-if [ "$(md5sum $1/$FILENAME)" == "$(cat $MD5SUM)" ]
+curl -sS $URL -o $BASENAME/$FILENAME
+if [ "$(md5sum $1/$FILENAME)" == "$(cat $1/md5sum-previous-file)" ]
 then
 echo no change
 exit
