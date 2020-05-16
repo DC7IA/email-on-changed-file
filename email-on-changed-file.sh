@@ -9,12 +9,12 @@ fi
 BASENAME="${1%.*}"
 cd $DATADIR
 curl -sS $URL -o $BASENAME/$FILENAME
-if [ "$(md5sum $1/$FILENAME)" == "$(cat $1/md5sum-previous-file)" ]
+if [ "$(md5sum $BASENAME/$FILENAME)" == "$(cat $BASENAME/md5sum-previous-file)" ]
 then
 echo no change
 exit
 else
-md5sum $1/$FILENAME > $MD5SUM
+md5sum $BASENAME/$FILENAME > $BASENAME/md5sum-previous-file
 echo changed!
 printf "$CONTENT" | mail -s "$SUBJECT" -S from="$SENDER" $RECEIVER
 fi
