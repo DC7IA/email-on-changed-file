@@ -4,8 +4,6 @@ DATADIR="/home/$USER/cronjobs/"
 URL="https://www.example.org/file" 
 # file name / where to save the file
 FILENAME="file.name"
-# location of the md5sum (so we can compare on the next run)
-MD5SUM="path/md5sum-previous-file"
 # email address used for the sender
 SENDER="noreply@example.org"
 # email address to send to
